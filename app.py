@@ -6,7 +6,7 @@ Created on Tue Apr 21 14:57:17 2020
 """
 
 #import statements
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 #Flask app variable
 app = Flask(__name__)
@@ -15,6 +15,14 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     return render_template("index.html")
+
+@app.route("/assignments")
+def assignments():
+  return render_template('assignments.html')
+
+@app.route("/classes")
+def classes():
+  return render_template('classes.html')
 
 #start the server
 if __name__ == "__main__":
